@@ -20,12 +20,26 @@ h1,h2,h3,h4,h5,h6 {
     color: var(--black);
 }
 
-nav {
+nav, footer {
     width: 100%;
     background-color: var(--background);
-    color: var(--white);
+    color: var(--on-background);
     display: flex;
     align-items: center;
+}
+
+footer {
+    margin-top: 2em;
+    padding-bottom: 1em;
+}
+
+footer a {
+    color: var(--on-background);
+    text-decoration: underline;
+}
+
+footer h2 {
+    text-align: center;
 }
 
 nav ul {
@@ -76,6 +90,17 @@ a {
     color: var(--main);
 }
 
+figure {
+    margin: auto;
+    padding: 0;
+    display: inline;
+}
+
+hr {
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
 .content {
     padding: 1em 3em;
     max-width: 1140px;
@@ -103,9 +128,21 @@ a {
     border-radius: 0.2em;
 }
 
+
 #about-me > div {
     display: grid;
     grid-template-columns: auto auto;
+    column-gap: 1em;
+    align-items: center
+}
+
+#about-me p {
+    text-align: justify;
+}
+
+#contact-information {
+    display: grid;
+    grid-template-columns: auto auto auto;
     column-gap: 1em;
 }
 
@@ -156,10 +193,26 @@ a {
     gap: 0.5em;
 }
 
-@media screen and (max-width: 600px) {
-#desktop-menu {
-    display: none;
+#photo {
+    width: 150px;
+    max-width: 100%;
+    border-radius: 50%;
+    max-width: 250px;
 }
+
+@media screen and (max-width: 600px) {
+
+    #photo {
+        width: 100%;
+    }
+
+    #desktop-menu {
+        display: none;
+    }
+
+    #about-me > div, #contact-information {
+        grid-template-columns: auto;
+    }
 
     #mobile-menu[aria-expanded="true"] {
         display: flex;
